@@ -5,16 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./public/style/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
-      <div class="header__logo"></div>
-      <div class="header__citySelection"></div>
+      <div class="header__logo">
+        <img src="./public/images/logo/ohmyfood@2x.svg" alt="Logo OhMyFood" />
+      </div>
     </header>
     <main>
+      <section class="citySelection">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Paris, Belleville</p>
+      </section>
       <section class="hero-banner">
-        <div class="hero-banner__headings"></div>
+        <div class="hero-banner__headings">
+          <h1>Réserver le menu qui vous convient</h1>
+          <p>
+            Découvrez des restaurant d'exception, selectionnés par nos soins.
+          </p>
+        </div>
         <button class="hero-banner__button">Explorer nos restaurants</button>
       </section>
       <section class="process">
