@@ -1,0 +1,13 @@
+.hero-banner__button {
+  color: white;
+  background: rgb(244, 103, 239);
+  background: linear-gradient(
+    164deg,
+    rgba(244, 103, 239, 1) 4%,
+    rgba(143, 57, 184, 1) 100%
+  );
+
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+}
