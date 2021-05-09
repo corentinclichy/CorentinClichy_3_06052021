@@ -1,0 +1,46 @@
+.step {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 2rem 0 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(226, 225, 225);
+  position: relative;
+  transition: all 0.25s ease-in-out;
+
+  .step__number {
+    background-color: #9356dc;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 36%;
+    left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .step__icon {
+    color: gray;
+    font-size: 1.3rem;
+    padding-right: 1.5rem;
+  }
+  .step__title {
+    font-weight: bolder;
+  }
+
+  &--final {
+    background-color: #f5edff;
+    .step__icon {
+      color: #9356dc;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
