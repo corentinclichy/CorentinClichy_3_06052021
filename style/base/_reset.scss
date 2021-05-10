@@ -132,20 +132,3 @@ button {
   border: none;
   cursor: pointer;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-
-  &:active {
-    color: black;
-  }
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  animation: overflowContent 0.25s ease forwards;
-  animation-delay: 4.5s;
-}

@@ -24,4 +24,15 @@
       color: gray;
     }
   }
+
+  @include size("md") {
+    .hero-banner__headings {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
 }

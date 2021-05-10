@@ -7,7 +7,8 @@
   box-shadow: 5px 5px 10px rgb(226, 225, 225);
   position: relative;
   transition: all 0.25s ease-in-out;
-
+  width: 90%;
+  max-width: 100%;
   .step__number {
     background-color: #9356dc;
     width: 25px;
@@ -31,6 +32,7 @@
   }
   .step__title {
     font-weight: bolder;
+    margin-right: 1rem;
   }
 
   &--final {
@@ -42,5 +44,12 @@
 
   &:hover {
     transform: scale(1.02);
+  }
+
+  @include size("md") {
+    .step {
+      margin: auto;
+      width: 100%;
+    }
   }
 }

@@ -33,4 +33,8 @@
 .menu__btn {
   @extend .btn;
   padding: 1rem 3rem;
+
+  @include size("md") {
+    font-size: 1.2rem;
+  }
 }

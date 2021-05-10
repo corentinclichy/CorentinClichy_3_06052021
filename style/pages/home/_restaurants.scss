@@ -7,6 +7,10 @@
 
   h2 {
     align-self: flex-start;
+
+    @include size("md") {
+      font-size: 1.8rem;
+    }
   }
 
   .restaurants__container {
@@ -15,5 +19,15 @@
     flex-direction: column;
     width: 100%;
     gap: 2rem;
+
+    @include size("md") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        width: 45%;
+      }
+    }
   }
 }

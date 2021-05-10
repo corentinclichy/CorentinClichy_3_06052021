@@ -5,18 +5,21 @@
 
 @import "base/reset";
 @import "base/typography";
+@import "base/base";
 
 @import "components/header";
 @import "components/citySelection";
-@import "components/hero-banner";
 @import "components/buttons";
-@import "components/process";
+
 @import "components/step";
-@import "components/restaurants";
 @import "components/restaurantCard";
 @import "components/footer";
 @import "components/heart";
-@import "components/menu";
-@import "components/dish-card";
 @import "components/loading-spinner";
-@import "components/spinner-modal";
+
+@import "pages/home/process";
+@import "pages/home/spinner-modal";
+@import "pages/home/restaurants";
+@import "pages/home/hero-banner";
+@import "pages/menu-page/menu";
+@import "pages/menu-page/dish-card";
