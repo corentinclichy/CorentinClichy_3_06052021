@@ -3,14 +3,20 @@
 @keyframes fill-animation {
   0% {
     transform: scale(1);
-    fill: transparent;
   }
   50% {
     transform: scale(1.2);
   }
   100% {
     transform: scale(1);
-    fill: url(#gradient-fill);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 html,
@@ -187,15 +193,40 @@ header {
   width: 100%;
   align-items: center;
   justify-content: center;
+  position: sticky;
 }
-header .header__logo {
+header .header__container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header__container .header__logo {
   width: 35%;
   height: 50%;
 }
-header .header__logo img {
+header .header__container .header__logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.header--pages {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  justify-content: space-between;
+}
+.header--pages .header__logo {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.header--pages .header__backBtn {
+  font-size: 1.2rem;
+  color: #686868;
 }
 
 .citySelection {
@@ -241,13 +272,25 @@ header .header__logo img {
   color: gray;
 }
 
-.hero-banner__button {
+.btn, .menu__btn, .hero-banner__button {
   color: white;
   background: #f467ef;
   background: linear-gradient(164deg, #f467ef 4%, #8f39b8 100%);
+  box-shadow: 4px 4px 10px #e2e2e2;
   padding: 1rem 1.5rem;
   border-radius: 30px;
   font-size: 1rem;
+  transition: all 0.25s ease-in-out;
+}
+.btn:hover, .menu__btn:hover, .hero-banner__button:hover {
+  background: #f467ef;
+  background: linear-gradient(164deg, #eb72e7 4%, #b358dd 100%);
+  box-shadow: 4px 4px 10px #a09f9f;
+  transform: scale(1.05);
+}
+
+.menu__btn {
+  padding: 1rem 3rem;
 }
 
 .process {
@@ -394,6 +437,7 @@ footer .footer__links-container a {
   color: white;
   display: flex;
   align-items: center;
+  font-weight: lighter;
 }
 footer .footer__links-container a i {
   font-size: 0.7rem;
@@ -402,8 +446,8 @@ footer .footer__links-container a i {
 footer .footer__links-container a .fa-hands-helping {
   width: 10px;
 }
-footer .footer__links-container .footer__links {
-  font-weight: 900;
+footer .footer__links-container .footer__link {
+  font-weight: 400;
 }
 
 *::after,
@@ -418,11 +462,11 @@ footer .footer__links-container .footer__links {
 
 .icon {
   fill: transparent;
-  stroke: #ff79da;
+  stroke: #171817;
   stroke-width: 1px;
   cursor: pointer;
   position: relative;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-out;
 }
 .icon svg {
   overflow: visible;
@@ -433,8 +477,184 @@ footer .footer__links-container .footer__links {
   stroke-dasharray: 1550;
   transform-origin: center;
 }
+.icon .heart--background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  stroke: none;
+  fill: url(#gradient-fill);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
 .icon .heart--main:hover {
-  animation: fill-animation 0.8s ease-in-out forwards;
+  animation: fill-animation 0.8s ease-in-out infinite;
+  stroke: none;
+}
+.icon .heart--main:hover + .heart--background {
+  opacity: 1;
+  animation: fill-animation 0.8s ease-in-out infinite;
+}
+
+.menu {
+  width: 100%;
+  background: url("/public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") no-repeat fixed;
+  background-size: contain;
+  background-color: black;
+  background-position: 30% 12%;
+}
+.menu--palette {
+  background: url("/public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") no-repeat fixed;
+  background-size: contain;
+  background-color: black;
+  background-position: 30% 12%;
+}
+.menu .space {
+  height: 250px;
+  width: 100%;
+}
+.menu .menu__container {
+  max-width: 100%;
+  background-color: #f5f4f4;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 1rem;
+}
+.menu .menu__container .menu__headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+  width: 95%;
+}
+.menu .menu__container .menu__headings h1 {
+  font-family: "Shrikhand", cursive;
+}
+.menu .menu__container .menu__typeOfDishes {
+  animation: fade-in 2s ease-in-out forwards;
+}
+.menu .menu__container .menu__typeOfDishes h3 {
+  font-weight: lighter;
+  text-transform: uppercase;
+  padding: 0 0 0.3rem 0.5rem;
+  position: relative;
+}
+.menu .menu__container .menu__typeOfDishes h3::before {
+  content: "";
+  height: 2px;
+  width: 40px;
+  position: absolute;
+  background-color: #99e2d0;
+  bottom: 0;
+}
+.menu .menu__container .menu__typeOfDishes .dishes__container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 1rem 0 3rem 0;
+  width: 100%;
+}
+.menu .menu__container .menu__order {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.dish-card {
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 10vh;
+  cursor: pointer;
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+.dish-card:nth-child(1n) {
+  animation-delay: 0.25s;
+}
+.dish-card:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+.dish-card:nth-child(3n) {
+  animation-delay: 0.75s;
+}
+.dish-card:nth-child(4n) {
+  animation-delay: 1s;
+}
+.dish-card:nth-child(5n) {
+  animation-delay: 1.25s;
+}
+.dish-card:nth-child(6n) {
+  animation-delay: 1.5s;
+}
+.dish-card:nth-child(7n) {
+  animation-delay: 1.75s;
+}
+.dish-card:nth-child(8n) {
+  animation-delay: 2s;
+}
+.dish-card:nth-child(9n) {
+  animation-delay: 2.25s;
+}
+.dish-card:nth-child(10n) {
+  animation-delay: 2.5s;
+}
+.dish-card .dish-card__infos {
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.dish-card .dish-card__headings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-right: 0rem;
+}
+.dish-card .dish-card__headings p {
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+.dish-card .dish-card__price {
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: flex-end;
+  padding-bottom: 1rem;
+  transform: translateX(60px);
+  transition: all 0.5s ease-in-out;
+}
+.dish-card .dish-card__choose {
+  height: 100%;
+  width: fit-content;
+  background-color: #99e2d0;
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform: translateX(80px);
+  transition: all 0.5s ease-in-out;
+}
+.dish-card:hover .dish-card__choose {
+  transform: translateX(0px);
+}
+.dish-card:hover .dish-card__price {
+  transform: translateX(0px);
 }
 
 /*# sourceMappingURL=main.css.map */

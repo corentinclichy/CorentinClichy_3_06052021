@@ -5,14 +5,41 @@ header {
   width: 100%;
   align-items: center;
   justify-content: center;
+  position: sticky;
+
+  .header__container {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header__logo {
+      width: 35%;
+      height: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.header--pages {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  justify-content: space-between;
 
   .header__logo {
-    width: 35%;
-    height: 50%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+  .header__backBtn {
+    font-size: 1.2rem;
+    color: rgb(104, 104, 104);
   }
 }

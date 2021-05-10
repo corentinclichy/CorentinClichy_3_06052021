@@ -10,11 +10,11 @@
 
 .icon {
   fill: transparent;
-  stroke: $secondary;
+  stroke: rgb(23, 24, 23);
   stroke-width: 1px;
   cursor: pointer;
   position: relative;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-out;
 
   svg {
     overflow: visible;
@@ -27,7 +27,24 @@
     transform-origin: center;
   }
 
+  .heart--background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    stroke: none;
+    fill: url(#gradient-fill);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
   .heart--main:hover {
-    animation: fill-animation 0.8s ease-in-out forwards;
+    animation: fill-animation 0.8s ease-in-out infinite;
+    stroke: none;
+  }
+  .heart--main:hover + .heart--background {
+    opacity: 1;
+    animation: fill-animation 0.8s ease-in-out infinite;
   }
 }

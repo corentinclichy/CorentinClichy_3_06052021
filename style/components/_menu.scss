@@ -1,0 +1,73 @@
+.menu {
+  width: 100%;
+  background: url("/public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
+    no-repeat fixed;
+  background-size: contain;
+  background-color: black;
+  background-position: 30% 12%;
+
+  &--palette {
+    background: url("/public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
+      no-repeat fixed;
+    background-size: contain;
+    background-color: black;
+    background-position: 30% 12%;
+  }
+  .space {
+    height: 250px;
+    width: 100%;
+  }
+
+  .menu__container {
+    max-width: 100%;
+    background-color: rgb(245, 244, 244);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 1rem;
+    .menu__headings {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
+      width: 95%;
+      h1 {
+        @include shrikhand;
+      }
+    }
+
+    .menu__typeOfDishes {
+      animation: fade-in 2s ease-in-out forwards;
+      h3 {
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding: 0 0 0.3rem 0.5rem;
+        position: relative;
+        &::before {
+          content: "";
+          height: 2px;
+          width: 40px;
+          position: absolute;
+          background-color: $thirdary;
+          bottom: 0;
+        }
+      }
+
+      .dishes__container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 1rem 0 3rem 0;
+        width: 100%;
+      }
+    }
+
+    .menu__order {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 3rem;
+    }
+  }
+}
