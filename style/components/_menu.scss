@@ -7,6 +7,14 @@
   background-position: 30% 12%;
 
   &--palette {
+    background: url("../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
+      no-repeat fixed;
+    background-size: contain;
+    background-color: black;
+    background-position: 30% 12%;
+  }
+
+  &--francaise {
     background: url("/public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
       no-repeat fixed;
     background-size: contain;
