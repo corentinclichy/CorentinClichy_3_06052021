@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@keyframes fill-animation {
+  0% {
+    transform: scale(1);
+    fill: transparent;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    fill: url(#gradient-fill);
+  }
+}
 html,
 body,
 div,
@@ -167,63 +180,6 @@ h4 {
   font-size: 1.2rem;
 }
 
-.heart-container {
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-
-.heart-clip {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  clip-path: url(#svgPath);
-}
-.heart-clip:hover {
-  animation: pulse 0.6s 0.3s infinite;
-}
-.heart-clip:hover::before {
-  transform: scale(1);
-  opacity: 1;
-}
-.heart-clip::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #d32f2f;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.2s linear, opacity 0.2s linear;
-  transform-origin: center 60%;
-}
-.heart-clip.active {
-  animation: pulse 0.6s 0.3s forwards;
-}
-
-.heart-stroke {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: #d32f2f;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.2);
-  }
-  60% {
-    transform: scale(1);
-  }
-}
 header {
   background-color: white;
   height: 9vh;
@@ -448,6 +404,37 @@ footer .footer__links-container a .fa-hands-helping {
 }
 footer .footer__links-container .footer__links {
   font-weight: 900;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  fill: transparent;
+  stroke: #ff79da;
+  stroke-width: 1px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+}
+.icon svg {
+  overflow: visible;
+  width: 2rem;
+}
+.icon path {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+.icon .heart--main:hover {
+  animation: fill-animation 0.8s ease-in-out forwards;
 }
 
 /*# sourceMappingURL=main.css.map */

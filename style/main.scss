@@ -1,8 +1,10 @@
 @import "abstract/typography";
+@import "abstract/color";
+@import "abstract/mediaqueries";
+@import "abstract/animations";
 
 @import "base/reset";
 @import "base/typography";
-@import "base/animations";
 
 @import "components/header";
 @import "components/citySelection";
@@ -13,3 +15,4 @@
 @import "components/restaurants";
 @import "components/restaurantCard";
 @import "components/footer";
+@import "components/heart";

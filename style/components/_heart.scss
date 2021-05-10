@@ -1,0 +1,33 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  fill: transparent;
+  stroke: $secondary;
+  stroke-width: 1px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+
+  svg {
+    overflow: visible;
+    width: 2rem;
+  }
+
+  path {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+  }
+
+  .heart--main:hover {
+    animation: fill-animation 0.8s ease-in-out forwards;
+  }
+}
