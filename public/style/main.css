@@ -657,13 +657,13 @@ footer .footer__links-container .footer__link {
   background-position: 30% 12%;
 }
 .menu--palette {
-  background: url("../../../public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") no-repeat fixed;
+  background: url("./public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") no-repeat fixed;
   background-size: contain;
   background-color: black;
   background-position: 30% 12%;
 }
 .menu--francaise {
-  background: url("./../../../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") no-repeat fixed;
+  background: url("/../../../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") no-repeat fixed;
   background-size: contain;
   background-color: black;
   background-position: 30% 12%;
