@@ -31,3 +31,12 @@
     opacity: 0;
   }
 }
+
+@keyframes overflowContent {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: visible;
+  }
+}
