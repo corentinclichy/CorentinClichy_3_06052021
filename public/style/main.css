@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@keyframes fill-animation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -436,12 +425,14 @@ footer .footer__links-container .footer__link {
 }
 
 .icon {
-  fill: transparent;
   stroke: #171817;
   stroke-width: 1px;
   cursor: pointer;
   position: relative;
   transition: all 0.25s ease-out;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
 }
 .icon svg {
   overflow: visible;
@@ -452,24 +443,40 @@ footer .footer__links-container .footer__link {
   stroke-dasharray: 1550;
   transform-origin: center;
 }
+.icon .heart--main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  fill-opacity: 0;
+  opacity: 1;
+}
 .icon .heart--background {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 400;
   stroke: none;
   fill: url(#gradient-fill);
   pointer-events: none;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-}
-.icon .heart--main:hover {
-  animation: fill-animation 0.8s ease-in-out infinite;
-  stroke: none;
-}
-.icon .heart--main:hover + .heart--background {
   opacity: 1;
-  animation: fill-animation 0.8s ease-in-out infinite;
+  transition: all 0.1s ease-in-out;
+  pointer-events: none;
+}
+.icon .white-panel {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30%;
+  left: -40%;
+  z-index: 500;
+  transform: translateY(0px);
+  background-color: white;
+  border-radius: 45%;
+  transition: all 0.45s ease-in-out;
+}
+.icon .heart--main:hover + .white-panel {
+  transform: translateY(-40px) rotate(850deg);
 }
 
 .loader,

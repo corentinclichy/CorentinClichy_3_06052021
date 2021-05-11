@@ -9,13 +9,14 @@
 }
 
 .icon {
-  fill: transparent;
   stroke: rgb(23, 24, 23);
   stroke-width: 1px;
   cursor: pointer;
   position: relative;
   transition: all 0.25s ease-out;
-
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
   svg {
     overflow: visible;
     width: 2rem;
@@ -27,24 +28,43 @@
     transform-origin: center;
   }
 
+  .heart--main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    fill-opacity: 0;
+    opacity: 1;
+  }
+
   .heart--background {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 400;
     stroke: none;
     fill: url(#gradient-fill);
     pointer-events: none;
-    opacity: 0;
-    transition: all 1s ease-in-out;
+    opacity: 1;
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
   }
 
-  .heart--main:hover {
-    animation: fill-animation 0.8s ease-in-out infinite;
-    stroke: none;
+  .white-panel {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -30%;
+    left: -40%;
+    z-index: 500;
+    transform: translateY(0px);
+    background-color: white;
+    border-radius: 45%;
+    transition: all 0.45s ease-in-out;
   }
-  .heart--main:hover + .heart--background {
-    opacity: 1;
-    animation: fill-animation 0.8s ease-in-out infinite;
+
+  .heart--main:hover + .white-panel {
+    //animation: fill-animation 2s ease-in-out forwards;
+    transform: translateY(-40px) rotate(850deg);
   }
 }
