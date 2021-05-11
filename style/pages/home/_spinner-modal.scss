@@ -10,6 +10,7 @@
   justify-content: center;
   animation: fade-out 2s ease-in-out forwards;
   animation-delay: 3s;
+  pointer-events: none;
 
   .content {
     background-color: red;

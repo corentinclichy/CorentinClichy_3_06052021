@@ -1,0 +1,21 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "food app ",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch './style/main.scss':'./public/style/main.css'",
+    "prefix": "postcss ./public/style/main.css --use autoprefixer -d ./public/style/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corentinclichy/OhMyFood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/corentinclichy/OhMyFood/issues"
+  },
+  "homepage": "https://github.com/corentinclichy/OhMyFood#readme"
+}
