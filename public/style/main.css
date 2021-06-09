@@ -164,7 +164,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1,
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
 h2,
 h3,
 h4,
@@ -208,6 +211,9 @@ header {
   position: sticky;
   z-index: 2000;
 }
+header h1 {
+  font-size: 2rem;
+}
 header .header__container {
   width: 90%;
   height: 100%;
@@ -215,30 +221,22 @@ header .header__container {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-header .header__container .header__logo {
-  width: 35%;
-  height: 50%;
-}
-header .header__container .header__logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  position: relative;
 }
 
 .header--pages {
   position: sticky;
   top: 0;
   z-index: 2000;
-  justify-content: space-between;
 }
-.header--pages .header__logo {
-  display: flex;
-  align-items: center;
-  margin: auto;
+.header--pages h1 {
+  flex: 1;
+  text-align: center;
 }
 .header--pages .header__backBtn {
   font-size: 1.2rem;
+  position: absolute;
+  left: 0;
   color: #686868;
 }
 
@@ -251,42 +249,26 @@ header .header__container .header__logo img {
   box-shadow: inset 0 6px 4px -4px #c9c8c8;
   padding: 0 30px 0 30px;
 }
-.citySelection input {
+.citySelection .citySelection__search-input {
+  height: 100%;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.citySelection .citySelection__search-input input {
   border: none;
   color: #525151;
   font-weight: bold;
-  width: 45%;
   height: 50%;
   font-size: 1rem;
   background-color: transparent;
 }
-@media (min-width: 768px) {
-  .citySelection input {
-    font-size: 2rem;
-    width: 35%;
-  }
-}
-@media (min-width: 1024px) {
-  .citySelection input {
-    font-size: 2rem;
-    width: 25%;
-  }
-}
-.citySelection input:focus {
+.citySelection .citySelection__search-input input:focus {
   outline: none;
 }
-.citySelection i {
+.citySelection .citySelection__search-input i {
   padding-right: 0.5rem;
-}
-@media (min-width: 768px) {
-  .citySelection i {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 1024px) {
-  .citySelection i {
-    font-size: 1.5rem;
-  }
 }
 
 .btn, .menu__btn, .hero-banner__button {
@@ -413,15 +395,11 @@ footer {
   background-color: #292828;
   padding: 2rem;
 }
-footer .footer__logo {
+footer h1 {
   color: white;
-  width: 25%;
+  font-size: 1.4rem;
+  color: white;
   padding-bottom: 1rem;
-}
-footer .footer__logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 footer .footer__links-container {
   display: flex;
@@ -727,7 +705,7 @@ footer .footer__links-container .footer__link {
   }
 }
 .menu .space {
-  height: 250px;
+  height: 27vh;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -757,14 +735,6 @@ footer .footer__links-container .footer__link {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-@media (min-width: 1024px) {
-  .menu .menu__container .menu-wrapper {
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    flex: 1;
-  }
 }
 .menu .menu__container .menu__typeOfDishes {
   animation: fade-in 2s ease-in-out forwards;

@@ -6,35 +6,28 @@
   justify-content: center;
   box-shadow: inset 0 6px 4px -4px rgb(201, 200, 200);
   padding: 0 30px 0 30px;
-  input {
-    border: none;
-    color: rgb(82, 81, 81);
-    font-weight: bold;
-    width: 45%;
-    height: 50%;
-    font-size: 1rem;
-    background-color: transparent;
 
-    @include size("md") {
-      font-size: 2rem;
-      width: 35%;
-    }
-    @include size("lg") {
-      font-size: 2rem;
-      width: 25%;
-    }
+  .citySelection__search-input {
+    height: 100%;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 
-    &:focus {
-      outline: none;
+    input {
+      border: none;
+      color: rgb(82, 81, 81);
+      font-weight: bold;
+      height: 50%;
+      font-size: 1rem;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
     }
-  }
-  i {
-    padding-right: 0.5rem;
-    @include size("md") {
-      font-size: 1.5rem;
-    }
-    @include size("lg") {
-      font-size: 1.5rem;
+    i {
+      padding-right: 0.5rem;
     }
   }
 }

@@ -8,7 +8,10 @@ body {
   @include roboto;
 }
 
-h1,
+h1 {
+  @include shrikhand;
+}
+
 h2,
 h3,
 h4,
