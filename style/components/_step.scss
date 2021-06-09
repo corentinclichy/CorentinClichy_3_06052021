@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   background-color: #f6f6f6;
-  padding: 2rem 0 2rem 3rem;
+  padding: 2rem 0 2rem 2rem;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgb(226, 225, 225);
   position: relative;
@@ -28,11 +28,10 @@
   .step__icon {
     color: gray;
     font-size: 1.3rem;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
   }
   .step__title {
     font-weight: bolder;
-    margin-right: 1rem;
   }
 
   &--final {
